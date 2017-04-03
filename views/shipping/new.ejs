@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <ul class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="active">Book Shipping</li>
+    </ul>
+  </div>
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3">
+            <div class="well bs-component">
+              <form action="/shipping/create" method="POST" class="form-horizontal" data-toggle="validator">
+
+  <!-- <div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+</div> -->
+
+                
+                <fieldset>                  
+                  <legend>Book a Shipping</legend>
+                  <% if(flash && flash.err) { %>
+                    <ul class="alert alert-warning">
+                      <% Object.keys(flash.err).forEach(function(error) { %>
+                      <li><%= JSON.stringify(flash.err[error]) %></li>
+                      <% }) %>
+                    </ul>
+                  <% } %>
+                  <div class="form-group">
+                    <label for="inputCargo" class="col-lg-2 control-label">Cargo</label>
+                    <div class="col-lg-10">                      
+                      <select class="form-control" id="inputCargo" name="cargo">
+                        <option>Refeer Cargo</option>
+                        <option>Dry Cargo</option>
+                        <option>Special Cargo</option>                                              
+                      </select>
+                    </div>
+                  </div>                  
+                  <div class="form-group">
+                    <label for="inputSource" class="col-lg-2 control-label">Source</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputSource" placeholder="Source address" name="source" data-error="The source address is invalid" required><div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputDestination" class="col-lg-2 control-label">Destination</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputDestination" placeholder="Destination Address" name="destination" data-error="Please fill out this field" required><div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputDate" class="col-lg-2 control-label">Date</label>
+                    <div class="col-lg-10">
+                      <input type="date" class="form-control" id="inputDate" placeholder="Date" name="date" data-error="Please fill out this field" required><div class="help-block with-errors"></div>                                          
+                    </div>
+                  </div>                   
+                  <div class="form-group">
+                    <label for="inputReceiver" class="col-lg-2 control-label">Reciever</label>
+                    <div class="col-lg-10">                     
+                      <input type="text" class="form-control" id="inputReceiver" placeholder="Receiver" data-error="Please fill out this field" name="receiver" required><div class="help-block with-errors"></div>                      
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputReceiverContact" class="col-lg-2 control-label">Reciever Contact</label>
+                    <div class="col-lg-10">                     
+                      <input type="text" class="form-control" id="inputReceiverContact" placeholder="Receiver Contact" name="receiverContact" data-error="Please fill out this field" required><div class="help-block with-errors"></div>                      
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputGoods" class="col-lg-2 control-label">Goods</label>
+                    <div class="col-lg-10">                      
+                      <input type="text" class="form-control" id="inputGoods" placeholder="Please type your goods description here *" name="goods" data-error="Please fill out this field" required><div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputContainers" class="col-lg-2 control-label">Containers</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputContainers" placeholder="Number of Containers" name="containers" data-error="Please fill out this field" required><div class="help-block">Minimum: 1 || Maximum: 10 Containers</div>                                          
+                    </div>
+                  </div>                                                 
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <button type="reset" class="btn btn-default">Cancel</button>
+                      <input type="submit" class="btn btn-primary" value="Book Shipping"/>
+                      <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>            
+          </div>
+	</div>
+</div>

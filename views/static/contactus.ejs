@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <ul class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="active">Sign-up</li>
+    </ul>
+  </div>
+	
+  <div id="cd-contact-us" class="row well">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#map-form" data-toggle="tab" aria-expanded="true">Location</a></li>
+      <li class=""><a href="#contact-us-form" data-toggle="tab" aria-expanded="false">Contact Form</a></li>          
+    </ul><!-- endNav-tabs -->
+
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active in" id="map-form">              
+                <address>                      
+                  <strong>Address:</strong> The Maersk Group Esplanaden 50 1098 Copenhagen K Denmark<br>
+                  <i class="fa fa-phone"></i><a href="tel:601111111111">     +45 33 63 33 63</a> ||
+                  <i class="fa fa-envelope"></i><a href="mailto:"> maelskline@mail.com</a>
+               </address>                             
+        <div id="map"></div>            
+        <!-- <iframe width="600" height="450" frameborder="0" style="border:0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB9f_2ZMewCkTsTwgy8NNrQZ8zgNbnB2Cs&q=Space+Needle,Seattle+WA" allowfullscreen></iframe> -->
+      </div> <!-- endTab_Map-form -->
+
+      <div class="tab-pane fade" id="contact-us-form">        
+        <h1 class="text-center">Contact the Maersk Group</h1>
+        <br>
+        <form role="form" data-toggle="validator" class="form-horizontal">            
+          <fieldset>                                
+            <div class="form-group">
+              <label for="contactName" class="col-lg-3 control-label">Name</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" id="contactName" placeholder="Please enter your contact name *" data-error="  Please fill out this field" required>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail" class="col-lg-3 control-label">Email</label>
+              <div class="col-lg-6">
+                <input type="email" class="form-control" id="contactEmail" placeholder="Please enter your contact email *" data-error="  Please fill out this field" required>  
+                <div class="help-block with-errors"></div>                
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject" class="col-lg-3 control-label">Subject</label>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" id="contactSubject" placeholder="Please enter your email subject *" data-error="  Please fill out this field" required>
+                <div class="help-block with-errors"></div>
+              </div>
+            </div>                                       
+            <div class="form-group">
+              <label for="textArea" class="col-lg-3 control-label">Message</label>
+              <div class="col-lg-6">
+                <textarea class="form-control form-control-white" rows="6" id="textArea" placeholder="Please type your message here *" data-error="  Please fill out this field" required></textarea>
+                <div class="help-block with-errors"></div>
+                <!-- <span class="help-block"></span> -->
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-3">                  
+                <button type="submit" class="btn btn-lg btn-primary">Send</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div> <!-- endTab_Contact-form -->
+    </div> <!-- endTab-content -->  
+  </div> <!-- endRow & endCd-Contact-us-->
+
+</div> <!-- endContainer -->  
+
+
+<script>
+    function initMap() {
+        var myLatLng = {lat: 55.687658, lng: 12.597378}; 
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          scrollwheel: false,
+          zoom: 17
+        });
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+          map: map,
+          position: myLatLng,          
+        });
+      }
+  </script>  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrUTcye4syRYBH-PLGhPFXJ4zZI6C6UJ0&callback=initMap" async defer></script>

@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    var barWidth = 20;
+    var lastBar = -1;
+
+    function setup() {      
+      var canvas = createCanvas(720, 400);
+      colorMode(HSB, width, height, 100); 
+      noStroke();
+      canvas.parent('sketch-holder');
+      background(255, 0, 200);
+    }
+
+    function draw() {
+      var whichBar = mouseX / barWidth;
+      if (whichBar != lastBar) {
+        var barX = whichBar * barWidth;
+        fill(barX, mouseY, 66);
+        rect(barX, 0, barWidth, height);
+        lastBar = whichBar;
+      }
+    }
+    // new p5();
+</script>  
+
+<div id="sketch-holder">
+  <h1>Maersk<br>Line</h1> 
+  <span>Move your mouse cursor</span>
+  <div class="cd-section">                
+    The <strong>World’s</strong> Leading Container Shipping Company<br />      
+    <ul>      
+      <!-- <li>applyForce()</li>
+      <li>update()</li>
+      <li>render()</li>
+      <li>isDead()</li> -->      
+    </ul> 
+  </div>      
+  <!-- Our sketch will go here! -->
+</div>

@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <ul class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li class="active">Sign-up</li>
+    </ul>
+  </div>
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3">
+            <div class="well bs-component">
+              <form action="/user/create" method="POST" class="form-horizontal" data-toggle="validator">
+
+  <!-- <div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+</div> -->
+
+                
+                <fieldset>                  
+                  <legend>Create an account</legend>
+                  <% if(flash && flash.err) { %>
+                    <ul class="alert alert-warning">
+                      <% Object.keys(flash.err).forEach(function(error) { %>
+                      <li><%= JSON.stringify(flash.err[error]) %></li>
+                      <% }) %>
+                    </ul>
+                  <% } %>
+                  <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputName" placeholder="Name" name="name" data-error="Please fill out this field" required><div class="help-block with-errors"></div>
+                    </div>
+                  </div>                  
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputEmail" placeholder="Email address" name="email" data-error="The email address is invalid" required><div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputCompany" class="col-lg-2 control-label">Company</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputCompany" placeholder="Company Name" name="company" data-error="Please fill out this field" required><div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-10">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" data-minlength="8" data-error="Minimum of 8 characters" required><div class="help-block with-errors"></div>                                          
+                    </div>
+                  </div>  
+                  <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label"></label>
+                    <div class="col-lg-10">                     
+                      <input type="password" class="form-control" id="inputConfirmation" placeholder="Confirm password" name="confirmation" data-match="#inputPassword" required><div class="help-block">Minimum of 8 characters</div>
+                    </div>
+                  </div>                                                
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <button type="reset" class="btn btn-default">Cancel</button>
+                      <input type="submit" class="btn btn-primary" value="Create Account"/>
+                      <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>            
+          </div>
+	</div>
+</div>

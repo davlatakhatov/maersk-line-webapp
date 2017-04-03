@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+		<div class="well col-lg-5 col-lg-offset-4">					
+			<h3><b>Shipping ID:</b> <%= shipping.id %></h3>
+			<hr>
+			<h4><b>Cargo:</b> <%= shipping.cargo %></h4>
+			<h4><b>Source:</b> <%= shipping.source %></h4>
+			<h4><b>Destination:</b> <%= shipping.destination %></h4>
+			<h4><b>Date:</b> <%= shipping.date %></h4>
+			<h4><b>Receiver:</b> <%= shipping.receiver %></h4>
+			<h4><b>Receiver's Contact:</b> <%= shipping.recieverContact %></h4>
+			<h4><b>Goods:</b> <%= shipping.goods %></h4>
+			<h4><b>Containers:</b> <%= shipping.containers %></h4>			
+			<hr>
+			<a href="/shipping/edit/<%= shipping.id %>" class="btn btn-medium btn-primary">Edit</a>
+		</div>
+	</div>
+</div>

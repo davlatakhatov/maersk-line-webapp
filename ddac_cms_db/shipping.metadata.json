@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"ddac_cms_db.shipping"},{"v":1,"unique":true,"key":{"receiverContact":1},"name":"receiverContact_1","ns":"ddac_cms_db.shipping","sparse":true}]}

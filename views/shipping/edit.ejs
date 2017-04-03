@@ -1,0 +1,70 @@
+<div class="container">
+	<div class="row">
+		<div class="well col-lg-5 col-lg-offset-4">
+			<form action="/shipping/update/<%= shipping.id %>" method="POST" class="form-horizontal">			
+				<fieldset>
+					<legend>Hey you are editing a shipping...</legend>
+
+					<div class="form-group">
+	                    <label for="inputCargo" class="col-lg-2 control-label">Cargo</label>
+	                    <div class="col-lg-10">                      
+	                      <select value="<%= shipping.cargo %>" class="form-control" id="inputCargo" name="cargo">
+	                        <option>Refeer Cargo</option>
+	                        <option>Dry Cargo</option>
+	                        <option>Special Cargo</option>                                              
+	                      </select>
+	                    </div>
+					</div>                  
+					<div class="form-group">
+						<label for="inputSource" class="col-lg-2 control-label">Source</label>
+						<div class="col-lg-10">
+						  <input value="<%= shipping.source %>" type="text" class="form-control" id="inputSource" placeholder="Source address" name="source" data-error="The source address is invalid" required><div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputDestination" class="col-lg-2 control-label">Destination</label>
+						<div class="col-lg-10">
+						  <input value="<%= shipping.destination %>" type="text" class="form-control" id="inputDestination" placeholder="Destination Address" name="destination" data-error="Please fill out this field" required><div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputDate" class="col-lg-2 control-label">Date</label>
+						<div class="col-lg-10">
+						  <input value="<%= shipping.date %>" type="text" class="form-control" id="inputDate" placeholder="Date" name="date" data-error="Please fill out this field" required><div class="help-block with-errors"></div>
+						</div>
+					</div>                   
+					<div class="form-group">
+						<label for="inputReceiver" class="col-lg-2 control-label">Reciever</label>
+						<div class="col-lg-10">                     
+						  <input value="<%= shipping.receiver %>" type="text" class="form-control" id="inputReceiver" placeholder="Receiver" data-error="Please fill out this field" name="receiver" required><div class="help-block with-errors"></div>                      
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputReceiverContact" class="col-lg-2 control-label">Reciever Contact</label>
+						<div class="col-lg-10">                     
+						  <input value="<%= shipping.receiverContact %>" type="text" class="form-control" id="inputReceiverContact" placeholder="Receiver Contact" name="receiverContact" data-error="Please fill out this field" required><div class="help-block with-errors"></div>                      
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputGoods" class="col-lg-2 control-label">Goods</label>
+						<div class="col-lg-10">                      
+						  <input value="<%= shipping.goods %>" type="text" class="form-control" id="inputGoods" placeholder="Please type your goods description here *" name="goods" data-error="Please fill out this field" required><div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputContainers" class="col-lg-2 control-label">Containers</label>
+						<div class="col-lg-10">
+						  <input value="<%= shipping.containers %>" type="text" class="form-control" id="inputContainers" placeholder="Number of Containers" name="containers" data-error="Please fill out this field" required><div class="help-block">Minimum: 1 || Maximum: 10 Containers</div>                                          
+						</div>
+					</div>                                                                   
+					<div class="form-group">
+				      <div class="col-lg-10 col-lg-offset-2">
+				        <input type="submit" value="Proceed" class="btn btn-lg btn-primary">
+				        <input type="hidden" name="_csrf" value="<%= _csrf %>">	        
+				      </div>
+				    </div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>

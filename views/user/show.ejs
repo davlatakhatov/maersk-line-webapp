@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<div class="well col-lg-5 col-lg-offset-4">					
+			<h3><%= user.name %></h3>	
+			<h4>
+				<% if (user.admin) { %>
+		 			<i class="fa fa-user-secret" aria-hidden="true"></i></i>
+	 			<% } else { %>
+	 				<i class="fa fa-user" aria-hidden="true"></i>
+			 	<% } %>
+			</h4>
+			<hr>
+			<h4><b>Company name: </b> <%= user.company %></h4>			
+			<h4><b>Email:</b> <%= user.email %></h4>
+			<hr>
+			<a href="/user/edit/<%= user.id %>" class="btn btn-medium btn-primary">Edit</a>
+		</div>
+	</div>
+</div>
